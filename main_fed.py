@@ -83,6 +83,7 @@ if __name__ == '__main__':
 
     # copy weights
     w_glob = net_glob.state_dict()
+    print(w_glob)
 
     # training
     loss_train = []
@@ -102,7 +103,6 @@ if __name__ == '__main__':
         loss_locals = []
         if not args.all_clients:
             w_locals = []
-            # m_locals = [] #
         m = max(int(args.frac * args.num_users), 1)
         idxs_users = np.random.choice(range(args.num_users), m, replace=False)
 
